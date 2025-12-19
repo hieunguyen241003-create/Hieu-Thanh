@@ -328,7 +328,7 @@
             loveMesh = new THREE.Mesh(new THREE.PlaneGeometry(70, 18), loveMat);
             loveMesh.position.set(0, 0, 20);
             loveMesh.visible = false;
-            scene.add(loveMesh);
+            //scene.add(loveMesh);
         }
 
         function updateParticleGroup(group, type, targetState, speed, handRotY, time) {
@@ -483,7 +483,7 @@
             const ctx = canvas.getContext('2d');
             
             const hands = new Hands({locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`});
-            hands.setOptions({ maxNumHands: 2, modelComplexity: 0, minDetectionConfidence: 0.5, minTrackingConfidence: 0.5 });
+            hands.setOptions({ maxNumHands: 2, modelComplexity: 0, minDetectionConfidence: 0.6, minTrackingConfidence: 0.5 });
 
             hands.onResults(results => {
                 ctx.clearRect(0,0,100,75); ctx.drawImage(results.image, 0, 0, 100, 75);
